@@ -1,0 +1,45 @@
+<resources>
+  <string name="app_name">MDM Application</string>
+
+  //Exception messages
+  <string name="exception_message_generic">Uygulama Hatası</string>
+  <string name="exception_message_no_connection">İnternet Bağlantı Hatası</string>
+  <string name="exception_message_user_not_found">Loglar alınamadı. İnternet bağlantınızı kontrol ediniz.</string>
+  <string name="add_log">LOGLARI GÖNDER</string>
+  <string name="test_log">LOGLARI AL</string>
+  <string name="test">TEST ET</string>
+  <string name="info">Bilgi</string>
+  <string name="token_register_success">Token database e kaydedildi.</string>
+  <string name="log_upload_success">Loglar başarılı bir şekilde sunucuya gönderildi.</string>
+  <string name="log_upload_fail">Loglar  sunucuya gönderilemedi.</string>
+  <string name="readed">OKUDUM</string>
+  <string name="extra">EXTRA</string>
+  <string name="type">Type</string>
+  <string name="action_settings">Ayarlar</string>
+  <string name="action_delete_logs">Logları Temizle</string>
+  <string name="upload_logs">LOGLARI GÖNDER</string>
+  <string name="message">Token Alınamadı!!</string>
+  <string name="status">durum</string>
+
+
+  <string name="token_service_called">TokenHandleService çağrıldı</string>
+  <string name="token_not_get">Token alınamadı.</string>
+  <string name="token">Token:</string>
+  <string name="register_token_error">Register Token Case -RegisterTokenSubscriber</string>
+
+  <string name="token_is_got_not_registered">Token alındı ancak database e kaydedilemedi</string>
+  <string name="token_is_got_server_refused">Token alındı ancak sunucu bu token ı kabul etmedi:(</string>
+  <string name="token_with_message_received">Bu id e sahip notifikasyon alındı.</string>
+  <string name="logical_mistake">Mantıksal hata olamaz bu :)</string>
+  <string name="token_refresh_service_called">onTokenRefresh çağrıldı @InstanceIdListenerService</string>
+
+  <string name="token_getting_error_upload_message_completed">Token alınırken oluşan hata database e gönderildi.</string>
+  <string name="token_getting_error_upload_error">Token alınırken oluşan hata database e gönderilken hata oluştu.</string>
+  <string name="command_received">Komut alındı</string>
+  <string name="log_upload_completed">Database log kayıt tamamlandı.</string>
+  <string name="refresh_logs">LOGLARI TAZELE</string>
+  <string name="token_uploaded_message">Token başarılı bir şekildi alındı ve kaydedildi.</string>
+  <string name="wrong_command_structure">Hatalı komut yapısı. Gönderdiğiniz komutu kontrol eder misiniz?</string>
+  <string name="google_play_service_not_available">Google Play Services yüklü değil kardeşim  önce bi onu yükle bakalım.</string>
+  <string name="exception_logs_not_found">loglar bulunamadı!</string>
+</resources>

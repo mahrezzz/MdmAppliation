@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+  <TextView
+      android:id="@+id/txtType"
+      android:layout_width="@dimen/text_view_size_small"
+      android:layout_height="wrap_content"
+      android:layout_alignParentStart="true"
+      android:ellipsize="end"
+      android:singleLine="true"
+      android:text="@string/type"
+      android:textColor="@color/colorPrimaryDark"
+      android:textSize="@dimen/header_text_size"
+      />
+
+
+  <TextView
+      android:id="@+id/txtLogType"
+      android:layout_width="@dimen/text_view_size_small"
+      android:layout_height="wrap_content"
+      android:layout_toEndOf="@+id/txtType"
+      android:ellipsize="end"
+      android:singleLine="true"
+      android:text="@string/info"
+      android:textColor="@color/primaryTextColor"
+      android:textSize="@dimen/header_text_size"
+      />
+
+  <TextView
+      android:id="@+id/txtCreatedDate"
+      android:layout_width="@dimen/text_view_size_large"
+      android:layout_height="wrap_content"
+      android:layout_alignParentEnd="true"
+      android:ellipsize="end"
+      android:gravity="end"
+      android:singleLine="true"
+      android:textColor="@color/primaryTextColor"
+      android:textSize="@dimen/header_text_size"
+      />
+
+  <TextView
+      android:id="@+id/txtLogMessage"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/txtLogType"
+      android:layout_marginTop="3dp"
+      android:textColor="@color/primaryTextColor"
+      android:textSize="@dimen/header_text_size"
+      />
+
+</RelativeLayout>

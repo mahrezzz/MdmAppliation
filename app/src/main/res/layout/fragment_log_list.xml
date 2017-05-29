@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+  <android.support.v7.widget.RecyclerView
+      android:id="@+id/listLogs"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_above="@+id/linearContainer"
+      android:layout_margin="5dp"
+      android:background="#BBDEFB"
+      android:padding="4dp"
+      android:scrollbars="vertical"
+      />
+
+
+  <LinearLayout
+      android:id="@+id/linearContainer"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:orientation="horizontal"
+      >
+
+
+    <Button
+        android:id="@+id/btnRefreshLogs"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_size_normal"
+        android:layout_weight="1"
+        android:drawableStart="@drawable/refresh"
+        android:text="@string/refresh_logs"
+        android:textColor="@color/primaryTextColor"
+        style="@style/Widget.AppCompat.Button.Colored"
+
+        />
+    <Button
+        android:id="@+id/btnUploadLogs"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_size_normal"
+        android:layout_weight="1"
+        android:drawableStart="@drawable/upload"
+        android:text="@string/upload_logs"
+        android:textColor="@color/primaryTextColor"
+
+        style="@style/Widget.AppCompat.Button.Colored"
+        />
+    <Button
+        android:id="@+id/btnTest"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_size_normal"
+        android:layout_weight="1"
+        android:drawableStart="@drawable/test"
+        android:text="@string/test"
+        android:textColor="@color/primaryTextColor"
+        style="@style/Widget.AppCompat.Button.Colored"
+        />
+
+
+  </LinearLayout>
+
+
+  <include
+      layout="@layout/view_progress"
+      />
+
+</RelativeLayout>

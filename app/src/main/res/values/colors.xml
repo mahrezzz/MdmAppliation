@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorPrimary">#1E88E5</color>
+  <color name="colorPrimaryDark">#0D47A1</color>
+
+  <color name="colorAccent">#42A5F5</color>
+  <color name="windowBackground">#90CAF9</color>
+  <color name="primaryTextColor">#000000</color>
+  <color name="navigationBarColor">#000000</color>
+
+
+
+  <color name="white">#FFFFFF</color>
+  <color name="silver">#C0C0C0</color>
+  <color name="gray">#808080</color>
+
+</resources>
+
+
+
+<!--
+<color name="colorPrimary">#BC69AA</color>
+<color name="colorPrimaryDark">#AF42AE</color>
+
+<color name="colorAccent">#BC69AA</color>
+<color name="windowBackground">#D0A3BF</color>
+<color name="primaryTextColor">#000000</color>
+<color name="navigationBarColor">#000000</color>
+-->

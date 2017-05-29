@@ -1,0 +1,168 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+
+
+android {
+  compileSdkVersion 23
+  buildToolsVersion '25.0.0'
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+  signingConfigs {
+    release
+  }
+
+
+  defaultConfig {
+    applicationId "com.barin.mdmappliation"
+    minSdkVersion 17
+    targetSdkVersion 23
+    versionCode 1
+    versionName "1.0"
+
+    //testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+  buildTypes {
+      /*release {
+        signingConfig signingConfigs.release
+        minifyEnabled false
+        proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+      }*/
+  }
+
+
+  packagingOptions {
+    exclude 'META-INF/DEPENDENCIES'
+    exclude 'META-INF/jersey-module-version'
+    exclude 'META-INF/LICENSE'
+    exclude 'META-INF/LICENSE.txt'
+    exclude 'META-INF/license.txt'
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/NOTICE.txt'
+    exclude 'META-INF/notice.txt'
+    exclude 'META-INF/ASL2.0'
+    exclude 'META-INF/services/javax.ws.rs.ext.MessageBodyReader'
+    exclude 'META-INF/services/javax.ws.rs.ext.MessageBodyWriter'
+  }
+
+
+  lintOptions {
+    abortOnError false
+    lintConfig file("${project.rootDir}/lint.xml")
+    htmlOutput file("$project.buildDir/reports/lint/my-lint.html")
+  }
+
+/*
+
+  def Properties props = new Properties();
+  def propFile = new File('app/signing.properties')
+
+  println "Project root dir:" + project.rootDir
+
+
+  if (propFile.canRead()) {
+    props.load(new FileInputStream(propFile))
+    if (props != null &&
+        props.containsKey('STORE_FILE') &&
+        props.containsKey('STORE_PASSWORD') &&
+        props.containsKey('KEY_ALIAS') &&
+        props.containsKey('KEY_PASSWORD')) {
+
+      android.signingConfigs.release.storeFile = file(props['STORE_FILE'])
+      android.signingConfigs.release.storePassword = props['STORE_PASSWORD']
+      android.signingConfigs.release.keyAlias = props['KEY_ALIAS']
+      android.signingConfigs.release.keyPassword = props['KEY_PASSWORD']
+    } else {
+      println 'signing.properties found but some entries are missing'
+      android.buildTypes.release.signingConfig = null
+    }
+  } else {
+    println 'signing.properties not found'
+    android.buildTypes.release.signingConfig = null
+  }
+*/
+
+  retrolambda {
+    jvmArgs '-noverify'
+  }
+}
+
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  testCompile 'junit:junit:4.12'
+  androidTestCompile 'junit:junit:4.12'
+
+
+
+
+  compile 'com.android.support:appcompat-v7:23.1.1'
+  compile 'com.android.support:design:23.1.1'
+  compile 'com.google.android.gms:play-services-gcm:8.4.0'
+
+
+  //DAGGER 2
+  compile 'com.google.dagger:dagger:2.0.2'
+  apt 'com.google.dagger:dagger-compiler:2.0.2'
+  provided 'javax.annotation:jsr250-api:1.0'
+
+
+  //RX
+  compile 'io.reactivex:rxandroid:1.1.0'
+  compile 'io.reactivex:rxjava:1.1.0'
+  compile 'io.reactivex:rxjava-math:1.0.0'
+  compile 'com.jakewharton.rxbinding:rxbinding:0.2.0'
+
+
+
+
+  //CUSTOM LIBS
+  compile 'com.google.code.gson:gson:2.5'
+  compile 'com.jakewharton:butterknife:7.0.1'
+  compile 'com.jakewharton.timber:timber:2.4.2'
+  compile 'com.android.support:support-v4:23.0.1'
+
+
+
+
+
+  compile 'com.android.support:recyclerview-v7:23.1.1'
+  compile 'jp.wasabeef:recyclerview-animators:1.2.0@aar'
+
+
+  //RETROFIT 2
+  compile 'com.squareup.retrofit:adapter-rxjava:2.0.0-beta1'
+  compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+  //will main lib to performing network callings
+  compile 'com.squareup.okhttp:okhttp:2.4.0'
+  //http client library responsible for creating http request adding setting header  and process the responses under the hood.
+  compile 'com.squareup.retrofit:converter-gson:2.0.0-beta1'
+  //responsible for converting between JSON and JAVA POJOs
+  /*now think that we are doing network operations get post etc with retrofit
+        processing the http requests and responses with okhttp
+        finally we get the json responses probably and convert these to java POJOs with gson lib
+                    ALL OF THESE LIBS COME TOGETHER IN RETROFIT 2.0
+      */
+
+
+
+  androidTestCompile 'com.google.dexmaker:dexmaker:1.0'
+  androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.0'
+  androidTestCompile 'org.mockito:mockito-core:1.9.5'
+
+
+  androidTestCompile 'com.android.support:support-annotations:23.1.1'
+  androidTestCompile 'com.android.support.test:runner:0.4.1'
+  androidTestCompile 'com.android.support.test:rules:0.4.1'
+  androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
+  androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.2') {
+    // Necessary to avoid version conflicts
+    exclude group: 'com.android.support', module: 'appcompat'
+    exclude group: 'com.android.support', module: 'support-v4'
+    exclude group: 'com.android.support', module: 'support-annotations'
+    exclude module: 'recyclerview-v7'
+  }
+}

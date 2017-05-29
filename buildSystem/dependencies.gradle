@@ -1,0 +1,66 @@
+allprojects {
+  repositories {
+    jcenter()
+  }
+}
+
+ext {
+
+  //Android
+  androidBuildToolsVersion = "23.0.2"
+  androidMinSdkVersion = 17
+  androidTargetSdkVersion = 23
+  androidCompileSdkVersion = 23
+
+  //Libraries
+  daggerVersion = '2.0.2'
+  butterKnifeVersion = '7.0.1'
+  recyclerViewVersion = '21.1.1'
+  rxJavaVersion = '1.1.0'
+  rxAndroidVersion = '1.1.0'
+  javaxAnnotationVersion = '1.0'
+  gsonVersion = '2.5'
+  okHttpVersion = '2.4.0'
+  androidAnnotationsVersion = '21.1.1'
+  playserviceVersion = '8.1.0'
+  timberVersion = '2.4.2'
+  retrofitVersion = '2.4.0'
+
+
+  //Testing
+  robolectricVersion = '3.0'
+  jUnitVersion = '4.12'
+  assertJVersion = '1.7.1'
+  mockitoVersion = '1.9.5'
+  dexmakerVersion = '1.0'
+  espressoVersion = '2.0'
+  testingSupportLibVersion = '0.1'
+
+
+  //Development
+  mdmDependencies =
+      [googleplaysService: "com.google.android.gms:play-services-gcm:${playserviceVersion}",
+       daggerCompiler    : "com.google.dagger:dagger-compiler:${daggerVersion}",
+       dagger            : "com.google.dagger:dagger:${daggerVersion}",
+       butterKnife       : "com.jakewharton:butterknife:${butterKnifeVersion}",
+       recyclerView      : "com.android.support:recyclerview-v7:${recyclerViewVersion}",
+       rxJava            : "io.reactivex:rxjava:${rxJavaVersion}",
+       rxAndroid         : "io.reactivex:rxandroid:${rxAndroidVersion}",
+       javaxAnnotation   : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+       okHttp            : "com.squareup.okhttp:okhttp:${okHttpVersion}",
+       timber            : "com.jakewharton.timber:timber:${timberVersion}",
+       retrofit          : "com.squareup.okhttp:okhttp:${retrofitVersion}",
+       gson              : "com.google.code.gson:gson:${gsonVersion}",
+       androidAnnotations: "com.android.support:support-annotations:${androidAnnotationsVersion}"]
+
+  mdmTestDependencies = [/*dexmakerMockito  : "com.google.dexmaker:dexmaker-mockito:${dexmakerVersion}",
+                         espresso         : "com.android.support.test.espresso:espresso-core:${espressoVersion}",
+                         testingSupportLib: "com.android.support.test:testing-support-lib:${testingSupportLibVersion}",*/
+                         testingSupportLib: "com.android.support.test:testing-support-lib:${testingSupportLibVersion}",
+                         junit            : "junit:junit:${jUnitVersion}",
+                         //assertj          : "org.assertj:assertj-core:${assertJVersion}",
+                         mockito          : "org.mockito:mockito-core:${mockitoVersion}",
+                         robolectric      : "org.robolectric:robolectric:${robolectricVersion}"
+
+  ]
+}
